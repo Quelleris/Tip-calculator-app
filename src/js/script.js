@@ -63,18 +63,6 @@ function calculateTip() {
     }
 }
 
-function calc() {
-    let billValue = parseFloat(billInput.value);
-    let peopleValue = parseInt(billInput.value, 10);
-    // let tipAmount = (billValue * tipValue) / peopleValue;
-    let tipAmount = (billValue + peopleValue);
-    let total = billValue - peopleValue;
-    // let total = (billValue / peopleValue) + tipAmount;
-    tipAmountElem.textContent = "$" + tipAmount.toFixed(2);
-    totalElem.textContent = "$" + total.toFixed(2);
-    
-}
-
 function reset() {
     billValue = 0;
     peopleValue = 1;
