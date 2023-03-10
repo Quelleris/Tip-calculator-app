@@ -48,12 +48,17 @@ input {
     color: var(--clr-primary-800);
     font-size: 24px;
     padding: 10px 18px;
-    margin-bottom: 32px;
 }
 
 input:focus-visible {
     outline: 1px solid var(--clr-neutral-500);
 }
+
+#bill, 
+#people {
+    margin-bottom: 32px;
+}
+
 h1 {
     width: min-content;
     text-transform: uppercase;

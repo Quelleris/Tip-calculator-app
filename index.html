@@ -26,15 +26,15 @@
         <div>
           <label class="input-label">Select Tip %</label>
           <div class="btn-grid">
-            <button class="btn tip-btn active" data-value="0.05">5%</button>
-            <button class="btn tip-btn" data-value="0.1">10%</button>
-            <button class="btn tip-btn" data-value="0.15">15%</button>
-            <button class="btn tip-btn" data-value="0.25">25%</button>
-            <button class="btn tip-btn" data-value="0.5">50%</button>
-            <button id="custom-tip-btn" class="btn tip-custom-btn">Custom</button>
+            <button class="btn tip-btn active" data-tip="0.05">5%</button>
+            <button class="btn tip-btn" data-tip="0.1">10%</button>
+            <button class="btn tip-btn" data-tip="0.15">15%</button>
+            <button class="btn tip-btn" data-tip="0.25">25%</button>
+            <button class="btn tip-btn" data-tip="0.5">50%</button>
+            <input type="text" id="custom-tip" class="btn tip-custom-btn" placeholder="custom">
           </div>
         </div>
-        <div>
+        <div class="input-wrapper">
           <div class="flex flex-jc-sb">
             <label for="people"class="input-label">Number of People</label>
             <p id="people-error" class="error">Can't be zero</p>
