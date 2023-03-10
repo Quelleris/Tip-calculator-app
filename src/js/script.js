@@ -14,7 +14,7 @@ totalElem.textContent = "$" + (0.0).toFixed(2);
 
 let tipValue = 0;
 let billValue = 0.0;
-let peopleValue = 1;
+let peopleValue = 0;
 
 billInput.addEventListener("input", updateBillValue);
 
@@ -45,7 +45,7 @@ tipButtons.forEach(btn => {
     btn.addEventListener("click", (e) => {
     tipButtons.forEach(btn => btn.classList.remove("active"));
     e.currentTarget.classList.add("active");
-    tipValue = e.currentTarget.dataset.value;
+    tipValue = e.currentTarget.dataset.tip;
     calculateTip() 
 })
 });
