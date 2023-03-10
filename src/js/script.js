@@ -1,6 +1,6 @@
 const billInput = document.querySelector("#bill");
 const peopleInput = document.querySelector('#people');
-const tipButtons = Array.from(document.querySelectorAll('.tip-btn'));
+const tipButtons = document.querySelectorAll('.tip-btn');
 const tipAmountElem = document.querySelector('#tip-amount');
 const totalElem = document.querySelector('#total');
 const resetBtn = document.querySelector("#reset-btn");
@@ -16,38 +16,39 @@ let tipValue = 0;
 let billValue = 0.0;
 let peopleValue = 1;
 
-billInput.addEventListener("input", updateBill);
+billInput.addEventListener("input", updateBillValue);
 
-peopleInput.addEventListener("input", updatePeople);
-
-tipButtons.forEach(btn => addEventListener("click", updateTip));
+peopleInput.addEventListener("input", updatePeopleValue);
 
 resetBtn.addEventListener("click", reset)
 
-function updateBill() {
-        billValue = (parseFloat(billInput.value) || 0);
-        calculateTip(); }
 
-function updatePeople() {
-    peopleValue = (parseFloat(peopleInput.value) || 0);
+function updateBillValue() {
+    billValue = (parseFloat(billInput.value) || 0);
+    calculateTip();
+}
 
+function updatePeopleValue() {
+    peopleValue = (parseFloat(peopleInput.value));
     if (peopleValue < 1) {
         error.style.display = "flex";
         peopleInput.style.border = "2px solid red";
         peopleInput.style.outline = "none";
-    } else if (peopleValue !== "") {
+    } else if (peopleInput.value !== 0) {
         error.style.display = "none";
         peopleInput.style.border = "none";
         calculateTip()
     }
 }
 
-function updateTip(e) {
-    tipButtons.forEach(btn => btn !== e.target && btn.classList.remove("active"));
-    e.target.classList.add("active");
-    tipValue = e.target.dataset.value;
-    calculateTip()
-}
+tipButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+    tipButtons.forEach(btn => btn.classList.remove("active"));
+    e.currentTarget.classList.add("active");
+    tipValue = e.currentTarget.dataset.value;
+    calculateTip() 
+})
+});
 
 function calculateTip() {
     if (billValue > 0 && peopleValue > 0 && tipValue !== undefined) {
@@ -73,7 +74,3 @@ function reset() {
     tipAmountElem.textContent = "$" + (0.0).toFixed(2);
     totalElem.textContent = "$" + (0.0).toFixed(2);
 }
-
-
-
-
