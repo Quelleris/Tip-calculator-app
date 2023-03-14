@@ -59,7 +59,7 @@ input:focus-visible {
     margin-bottom: 32px;
 }
 
-h1 {
+h2 {
     width: min-content;
     text-transform: uppercase;
     line-height: 1.4;
@@ -88,6 +88,20 @@ h1 {
     border-radius: 4px;
 }
 
+.visually-hidden {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
+
 .tip-btn {
     background-color: var(--clr-primary-800);
     color: white;
@@ -97,7 +111,7 @@ h1 {
     background-color: var(--clr-secondary-400);
 }
 
-.tip-custom-btn {
+.tip-custom-input {
     background-color: var(--clr-neutral-200);
     color: var(--clr-neutral-700);
     font-size: 24px;
