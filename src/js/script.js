@@ -4,7 +4,7 @@ const tipButtons = document.querySelectorAll('.tip-btn');
 const tipAmountElem = document.querySelector('#tip-amount');
 const totalElem = document.querySelector('#total');
 const resetBtn = document.querySelector("#reset-btn");
-const customTipInput = document.querySelector("#custom-tip-btn");
+const customTipInput = document.querySelector("#custom-tip");
 const error = document.querySelector("#people-error");
 
 billInput.value = "";
@@ -21,6 +21,14 @@ billInput.addEventListener("input", updateBillValue);
 peopleInput.addEventListener("input", updatePeopleValue);
 
 resetBtn.addEventListener("click", reset)
+
+customTipInput.addEventListener("input", getCustomInput);
+
+function getCustomInput() {
+    tipButtons.forEach(btn => btn.classList.remove("active"));
+    tipValue = parseFloat(customTipInput.value) || 0;
+    calculateTip();
+}
 
 
 function updateBillValue() {
@@ -66,8 +74,10 @@ function calculateTip() {
 
 function reset() {
     billValue = 0;
-    peopleValue = 1;
+    peopleValue = 0;
     tipValue = 0;
+    total = 0;
+    tipAmount = 0;
     billInput.value = "";
     peopleInput.value = "";
     customTipInput.value = "";
