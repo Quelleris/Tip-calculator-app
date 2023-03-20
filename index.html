@@ -13,19 +13,23 @@
 <body>
   <header class="header">
     <h1 class="visually-hidden">Tip Calculator App</h1>
-    <h2>Spli tter</h2>
+    <h2 class="header-title">Spli tter</h2>
   </header>
   <main>
     <section class="tip-calculator">
       <div class="tip-form">
         <div class="input-wrapper">
-          <label for="bill" class="input-label">Bill</label>
+          <h2>
+            <label for="bill" class="input-label">Bill</label>
+          </h2>
           <input type="text" id="bill" name="bill" placeholder="0.00"
           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
           />
         </div>
         <div>
-          <label class="input-label">Select Tip %</label>
+          <h2>
+            <label class="input-label">Select Tip %</label>
+          </h2>
           <div class="btn-grid">
             <button class="btn tip-btn active" data-tip="0.05">5%</button>
             <button class="btn tip-btn" data-tip="0.1">10%</button>
@@ -37,7 +41,9 @@
         </div>
         <div class="input-wrapper">
           <div class="flex flex-jc-sb">
-            <label for="people"class="input-label">Number of People</label>
+            <h2>
+              <label for="people"class="input-label">Number of People</label>
+            </h2>
             <p id="people-error" class="error">Can't be zero</p>
           </div>
           <input type="text" id="people" name="people" placeholder="0"
@@ -48,14 +54,18 @@
         <div class="results-wrapper">
           <div class="flex flex-jc-sb">
             <div class="wrapper">
-              <label class="result-title">Tip Amount</label>
+              <h2>
+                <label class="result-title">Tip Amount</label>
+              </h2>
               <p class="result-subtitle">/ person</p>
             </div>
             <span id="tip-amount" class="result-span"></span>
           </div>
           <div class="flex flex-jc-sb">
             <div class="wrapper">
-              <label class="result-title">Total</label>
+              <h2>
+                <label class="result-title">Total</label>
+              </h2>
               <p class="result-subtitle">/ person</p>
             </div>
             <span id="total" class="result-span"></span>
